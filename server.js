@@ -9,6 +9,8 @@ require('./db');
 
 // 引入认证控制器
 const authController = require('./controllers/authController');
+const userInfoController = require('./controllers/userInfoController');
+
 
 // 中间件
 app.use(cors());
@@ -16,6 +18,7 @@ app.use(bodyParser.json());
 
 // 路由
 app.use('/api/auth', authController);
+app.use('/api/user', userInfoController);
 
 // 启动服务器
 app.listen(port, () => {
